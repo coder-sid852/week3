@@ -1,0 +1,42 @@
+package pack1;
+ 
+class A
+{
+    public A()
+    {
+        //public constructor
+    }
+}
+ 
+package pack2;
+ 
+import pack1.*;
+ 
+class B
+{
+    A a = new A();       //Compile Time Error
+}
+
+It has error as the class has no access specifier which makes it default so Class-A can be instantiated within the package in 
+which it is defined. It can not be instantiated outside the package, even though it has public constructor. 
+
+we can modify access specifier, then it will not give error....
+
+package pack1;
+ 
+public class A
+{
+    public A()
+    {
+        //public constructor
+    }
+}
+ 
+package pack2;
+ 
+import pack1.*;
+ 
+class B
+{
+    A a = new A();       //Compile Time Error
+}
